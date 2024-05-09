@@ -1,0 +1,21 @@
+{% include 'includes/header.html' %}
+
+<section class="mb-5 text-center" style="margin-top: 100px" id="index">
+    {% if request.user.is_authenticated %}
+         <b>
+             {{ request.user.first_name }} {{ request.user.last_name }},<br>
+            İHA Kiralama Platformuna Hoş geldiniz!<br><br>
+             Şimdi üst menüden işlemlerinizi gerçekleştirebilirsiniz.
+         </b>
+    {% else %}
+        <b>
+            İHA'larınızı kiralamak için lütfen sağ üst köşeden oturum açın.<br>
+            Hesabınız yoksa, hemen bir tane oluşturun.
+        </b>
+    {% endif %}
+</section>
+
+
+{% include 'includes/footer.html' %}
+</body>
+</html>
