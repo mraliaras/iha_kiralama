@@ -1,16 +1,16 @@
 Özellikler
-· Üyelik ve Giriş Sistemi
-· Yönetici ve Kullanıcı Rollerinin Yönetimi
-· Yöneticiler için İHA (İnsansız Hava Aracı) Ekleme, Düzenleme, Silme ve Ajax ile Listeleme
-· Yöneticiler için Kullanıcı Ekleme, Düzenleme, Silme ve Ajax ile Listeleme
-· Yöneticiler için İHA Kiralamalarını Ajax ile Listeleme
-· Çeşitli İHA Özelliklerinin Yönetimi
-· Kullanıcılar için İHA Arama, Ajax ile Listeleme ve Kiralama
-· Kullanıcılar için Kiralamalarının Arama, Ajax ile Listeleme ve İptal Etme
-· İHA'ların tarih ve adet verilerine göre müsaitlik durumunun kontrol edilmesi
-· Tüm datatables tablolarında arama, sayfalama, excel, yazdırma ve pdf çıktı alma fonksiyonları
-· Birim Testleri
-· İşlevsellikler için ek Django kütüphaneleri
+1) Üyelik ve Giriş Özelliği
+2) Admin ve Kullanıcı Rolü
+3) Adminler için IHA Ekleme, Düzenleme, Silme, Ajax Listeleme
+4) Adminler için Kullanıcı Ekleme, Düzenleme, Silme, Ajax Listeleme
+5) Adminler için IHA Kiralamarını Ajax ile Listeleme
+6) Çeşitli IHA Özellikleri
+7) Kullanıcılar için IHA Arama, Ajax Listeleme, Kiralama
+8) Kullanıcılar için Kiralamalarını Arama, Ajax Listeleme, İptal Etme
+9) IHAları tarih ve adet verisine göre müsaitlik durumu kontrol etme
+11) Tüm datatable tablolarda arama, pagination, excel, print, pdf çıktı alma fonksiyonları
+12) Birim testleri
+13) İşlevsellikler için ekstra Django kütüphaneleri
 
 Kurulum
 Gerekli bağımlılıkların yüklenmesi için bir sanal ortam oluşturun. (virtualenv veya venv kullanarak)
