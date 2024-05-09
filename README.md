@@ -1,34 +1,45 @@
-Django ile İHA Kiralama Projesi
+Özellikler
+· Üyelik ve Giriş Sistemi
+· Yönetici ve Kullanıcı Rollerinin Yönetimi
+· Yöneticiler için İHA (İnsansız Hava Aracı) Ekleme, Düzenleme, Silme ve Ajax ile Listeleme
+· Yöneticiler için Kullanıcı Ekleme, Düzenleme, Silme ve Ajax ile Listeleme
+· Yöneticiler için İHA Kiralamalarını Ajax ile Listeleme
+· Çeşitli İHA Özelliklerinin Yönetimi
+· Kullanıcılar için İHA Arama, Ajax ile Listeleme ve Kiralama
+· Kullanıcılar için Kiralamalarının Arama, Ajax ile Listeleme ve İptal Etme
+· İHA'ların tarih ve adet verilerine göre müsaitlik durumunun kontrol edilmesi
+· Tüm datatables tablolarında arama, sayfalama, excel, yazdırma ve pdf çıktı alma fonksiyonları
+· Birim Testleri
+· İşlevsellikler için ek Django kütüphaneleri
 
-Not
-- Ön yüzde çok detaylı bir çalışma yapılmasına gerek yoktur. Basit bir ara yüz yeterlidir.
-- Hazır template kullanabilirsiniz.
+Kurulum
+Gerekli bağımlılıkların yüklenmesi için bir sanal ortam oluşturun. (virtualenv veya venv kullanarak)
+Projeyi klonlayın
 
-Proje süresi 3 gündür.
+git clone https://github.com/mraliaras/iha_kiralama.git
+Proje dizine gidin
+Proje bağımlılıklarını yükleyin
 
-İsterler
-- Python
-- Django
-- Postgresql
-- Rest Framework
+pip install -r requirements.txt
+setting.py dosyasında veritabanı bağlantısı ayarlarınızı yapın.
 
-Fonksiyonalite
-- Üyelik ve Giriş Ekran
-- Kiralanacak İHA için; Ekleme, Silme, Güncelleme, Listeleme, Kiralama
-   + İHA Özellikleri: Marka, Model, Ağırlık, Kategori vb.
--Üyelerin İHA kiralama kayıtları
-- Kiralanan İHA için; Kiralamayı Silme, Güncelleme, Listeleme
-   + Kiralama Özellikleri: İHA, Tarih ve Saat Aralıkları, Kiralayan Üye vb.
-- Tüm Listeleme sayfaları için tabloda filtreleme ve arama özellikleri
- 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'ihadb',  # PostgreSQL veritabanı adı
+        'USER': 'postgres',  # PostgreSQL kullanıcı adı
+        'PASSWORD': 'postgres',  # PostgreSQL şifre
+        'HOST': 'localhost',  # Yerel PostgreSQL sunucusu
+        'PORT': '5432',  # PostgreSQL port numarası
+    }
+}
+Çalıştıralım
 
-Ekstralar (Bonus)
-- Projenin docker ile ayağa kalkması
-- İyi hazırlanmış dokümantasyon ve yorum satırları
-- Birim testi
-- Listeleme sayfaları için datatable kullanılması
-- Server-side datatable kullanılması
-- Ön yüzde asenkron (Ajax, fetch vs.) yapı kullanılması
-- İlişkisel tabloların ayrı ayrı tutulması
-- Django için ekstra kütüphaneler kullanılması
-- Ön yüzde (Front-End) Bootstrap, Tailwind, Jquery vs. kullanılması
+ python manage.py runserver
+Projeyi başlattığınızda, veritabanı tabloları otomatik olarak oluşturulur ve gerekli migration işlemleri uygulanır.
+
+İlk kullanıcıyı oluşturmak için kaydolun ve PostgreSQL veritabanı üzerinden kullanıcının yetkisini belirlemek üzere "is_staff" sütununu kullanarak yönetici olarak tanımlayabilirsiniz. Yönetici olan kullanıcılar, normal kullanıcılardan farklı özelliklere sahiptir. Bu özellikler arasında, kayıtları ekleme, silme, güncelleme gibi temel işlemleri gerçekleştirme yetkisi bulunmaktadır.
+
+Yöneticiler, ayrıca kiralanan ihaleleri takip etme gibi özel yetkilere sahiptir. Bu özellikler sayesinde, projede yer alan kayıtların kontrolünü daha etkili bir şekilde yönetebilirler. Ayrıca, projede yer alan kullanıcıların gerçekleştirdiği ekleme, silme, güncelleme gibi işlemleri görüntüleme yetkisi ile kullanıcı aktivitelerini takip edebilirler.
+
+Bu sayede, yönetici olan kullanıcılar projedeki veri yönetimini etkili bir şekilde gerçekleştirebilir ve güvenliği sağlayabilir.
